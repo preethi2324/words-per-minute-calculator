@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Words per Min Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img src="logo.png" alt="" style="width: 60px" />
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          >Welcome to Words Per Minute
+          <?php echo "$_POST[username]" ?>
+          !</a
+        >
+        <form action="subscribe.html">
+          <button type="submit" class="btn btn-outline-light">
+            Subscribe to our newsletter
+          </button>
+        </form>
+        <form action="logout.php">
+          <button class="btn btn-outline-primary" type="submit" value="Logout">
+            Logout
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container my-4" style="color: white">
+      <h3>--> kindly refresh the page to start typing again</h3>
+    </div>
+    <div class="wrapper container text-center">
+      <div class="content-box">
+        <input type="text" class="input-field" />
+        <div class="typing-text">
+          <p id="paragraph"></p>
+        </div>
+        <div class="content">
+          <ul class="result-details">
+            <li class="time">
+              <p>Time Left:</p>
+              <span><b>60</b>s</span>
+            </li>
+            <li class="mistake">
+              <p>Mistakes:</p>
+              <span>0</span>
+            </li>
+            <li class="wpm">
+              <p>WPM:</p>
+              <span>0</span>
+            </li>
+            <li class="cpm">
+              <p>CPM:</p>
+              <span>0</span>
+            </li>
+          </ul>
+          <button type="button" id="try_again" onclick="openPopup()">
+            Try Again
+          </button>
+
+          <div class="popup" id="popup">
+            <img src="404-tick.png" />
+            <h2>Keep it up!</h2>
+            <p>
+              <?php echo "$_POST[username]" ?>
+            </p>
+            <button type="button2">
+              <a href="improve.html">More tips to improve typing</a>
+            </button>
+            <button type="button" onclick="closePopup()">Skip</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text-center text-white footer">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Social media -->
+
+        <!-- Section: Social media -->
+
+        <!-- Section: Form -->
+        <section class="">
+          <form action="">
+            <!--Grid row-->
+            <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-auto">
+                <p class="pt-2">
+                  <strong>Why you should sign up for our newsletter?</strong>
+                </p>
+              </div>
+
+              <div class="col-auto">
+                <!-- Submit button -->
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </section>
+
+        <section class="mb-4">
+          <p>
+            We are a bunch of developers learning and serving the interested
+            people. Your valuable feedback on our upcoming releases will ber
+            very beneficial for our future work in addition to that you'll be
+            updated to our upcoming features. You can also access few releases
+            by the early bird discount coupon for FREE!!
+          </p>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >wordspermin.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    s
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    let popup = document.getElementById("popup");
+
+    function openPopup() {
+      popup.classList.add("open-popup");
+    }
+    function closePopup() {
+      popup.classList.remove("open-popup");
+    }
+  </script>
+</html>
